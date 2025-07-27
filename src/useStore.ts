@@ -1,5 +1,5 @@
 import { store } from "./store";
-import { useSynchExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 
 export const useStore = (key: string | undefined) => {
   const getter = () => {
