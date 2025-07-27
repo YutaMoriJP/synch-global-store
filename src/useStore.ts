@@ -1,4 +1,4 @@
-import { store } from "./store";
+import { store, updateStore } from "./store";
 import { useSyncExternalStore } from "react";
 
 export const useStore = (key: string | undefined) => {
@@ -16,5 +16,5 @@ export const useStore = (key: string | undefined) => {
     return state;
   };
 
-  return useSynchExternalStore(store.subscribe, () => getter());
+  return [useSyncExternalStore(store.subscribe, () => getter()), updateStore];
 };
